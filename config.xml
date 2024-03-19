@@ -132,7 +132,7 @@
 
     <!--SYSMON EVENT ID 28 : File Block Shredding [FileBlockShredding]-->
 
-    <!--SYSMON EVENT ID 28 : File Executable Detected [FileExecutableDetected]-->
+    <!--SYSMON EVENT ID 29 : File Executable Detected [FileExecutableDetected]-->
 
   </EventFiltering>
 </Sysmon>
