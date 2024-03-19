@@ -1,0 +1,138 @@
+<!-- Super severity config for test purposes using Atomic Red Team framework -->
+<Sysmon schemaversion="4.90">
+  <!-- Hashing algorithms that can be used are md5,sha1,sha256,imphash or * for all,
+  more than once can be specified separated by using comas -->
+  <HashAlgorithms>*</HashAlgorithms>
+  <!-- Checking for signature revocation for drivers. -->
+  <CheckRevocation/>
+  <EventFiltering>
+    <!--SYSMON EVENT ID 1 : PROCESS CREATION [ProcessCreate]-->
+    <RuleGroup groupRelation="or">
+      <ProcessCreate onmatch="exclude">
+        
+      </ProcessCreate>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 2 : FILE CREATION TIME RETROACTIVELY CHANGED IN THE FILESYSTEM [FileCreateTime]-->
+    <RuleGroup groupRelation="or">
+      <FileCreateTime onmatch="exclude">
+      </FileCreateTime>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 3 : NETWORK CONNECTION INITIATED [NetworkConnect]-->
+    <RuleGroup groupRelation="or">
+      <NetworkConnect onmatch="exclude">
+      </NetworkConnect>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 4 : RESERVED FOR SYSMON SERVICE STATUS MESSAGES-->
+
+    <!--SYSMON EVENT ID 5 : PROCESS ENDED [ProcessTerminate]-->
+    <RuleGroup groupRelation="or">
+      <ProcessTerminate onmatch="exclude">
+      </ProcessTerminate>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 6 : DRIVER LOADED INTO KERNEL [DriverLoad]-->
+    <RuleGroup groupRelation="or">
+      <DriverLoad onmatch="exclude">
+      </DriverLoad>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 7 : DLL (IMAGE) LOADED BY PROCESS [ImageLoad]-->
+    <RuleGroup groupRelation="or">
+      <ImageLoad onmatch="exclude">
+      </ImageLoad>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 8 : REMOTE THREAD CREATED [CreateRemoteThread]-->
+    <RuleGroup groupRelation="or">
+      <CreateRemoteThread onmatch="exclude">
+      </CreateRemoteThread>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 9 : RAW DISK ACCESS [RawAccessRead]-->
+    <RuleGroup groupRelation="or">
+      <RawAccessRead onmatch="exclude">
+      </RawAccessRead>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 10 : INTER-PROCESS ACCESS [ProcessAccess]-->
+    <RuleGroup groupRelation="or">
+      <ProcessAccess onmatch="exclude">
+      </ProcessAccess>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 11 : FILE CREATED [FileCreate]-->
+    <RuleGroup groupRelation="or">
+      <FileCreate onmatch="exclude">
+      </FileCreate>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 12 & 13 & 14 : REGISTRY MODIFICATION [RegistryEvent]-->
+		<!--EVENT 12: "Registry object added or deleted"-->
+		<!--EVENT 13: "Registry value set"-->
+		<!--EVENT 14: "Registry objected renamed"-->
+    <RuleGroup groupRelation="or">
+      <RegistryEvent onmatch="exclude">
+      </RegistryEvent>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 15 : ALTERNATE DATA STREAM CREATED [FileCreateStreamHash]-->
+    <RuleGroup groupRelation="or">
+      <FileCreateStreamHash onmatch="exclude">
+      </FileCreateStreamHash>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 16 : SYSMON CONFIGURATION CHANGE-->
+
+    <!--SYSMON EVENT ID 17 & 18 : PIPE CREATED / PIPE CONNECTED [PipeEvent]-->
+    <RuleGroup groupRelation="or">
+      <PipeEvent onmatch="exclude">
+      </PipeEvent>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 19 & 20 & 21 : WMI EVENT MONITORING [WmiEvent]-->
+    <RuleGroup groupRelation="or">
+      <WmiEvent onmatch="exclude">
+      </WmiEvent>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 22 : DNS QUERY [DnsQuery]-->
+    <RuleGroup groupRelation="or">
+      <DnsQuery onmatch="exclude">
+      </DnsQuery>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 23 : FILE DELETE [FileDelete]-->
+    <RuleGroup groupRelation="or">
+      <FileDelete onmatch="exclude">
+      </FileDelete>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 24 : CLIPBOARD EVENT MONITORING [ClipboardChange]-->
+    <RuleGroup groupRelation="or">
+      <ClipboardChange onmatch="exclude">
+      </ClipboardChange>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 25 : PROCESS TAMPERING [ProcessTampering]-->
+    <RuleGroup groupRelation="or">
+      <ProcessTampering onmatch="exclude">
+      </ProcessTampering>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 26 : FILE DELETE LOGGED [FileDeleteDetected]-->
+    <RuleGroup groupRelation="or">
+      <FileDeleteDetected onmatch="exclude">
+      </FileDeleteDetected>
+    </RuleGroup>
+
+    <!--SYSMON EVENT ID 27 : File Block Executable [FileBlockExecutable]-->
+
+    <!--SYSMON EVENT ID 28 : File Block Shredding [FileBlockShredding]-->
+
+    <!--SYSMON EVENT ID 28 : File Executable Detected [FileExecutableDetected]-->
+
+  </EventFiltering>
+</Sysmon>
